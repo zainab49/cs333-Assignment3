@@ -66,6 +66,19 @@
                 const tbody = document.getElementById('student-data');
 
                 // Populate the table rows
+
+                data.results.forEach(record => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${record.year || 'N/A'}</td>
+                        <td>${record.semester || 'N/A'}</td>
+                        <td>${record.colleges || 'N/A'}</td>
+                        <td>${record.the_programs || 'N/A'}</td>
+                        <td>${record.nationality || 'N/A'}</td>
+                        <td>${record.number_of_students || 'N/A'}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
                 
             } catch (error) {
                 console.error(error.message);
